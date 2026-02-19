@@ -1,0 +1,28 @@
+
+# --- python ---
+__pycache__/
+*.py[cod]
+
+# --- venv ---
+.venv/
+venv/
+
+# --- jupyter ---
+.ipynb_checkpoints/
+
+# --- logs / temp ---
+*.log
+tmp/
+.DS_Store
+Thumbs.db
+
+# --- IDE ---
+.vscode/
+.idea/
+
+# --- model / large artifacts ---
+artifacts/
+
+# --- optional: cache dirs (HF/torch) ---
+.cache/
+**/.cache/
