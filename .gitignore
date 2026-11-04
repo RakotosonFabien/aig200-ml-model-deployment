@@ -26,3 +26,7 @@ artifacts/
 # --- optional: cache dirs (HF/torch) ---
 .cache/
 **/.cache/
+# --- secrets / course submission files ---
+.env
+assignment-report.docx
+assignment-report.pdf

@@ -1,14 +1,14 @@
 # aig200-ml-model-deployment
 **Course**: AIG 2026 - Capstone AIG200 Class, Machine Learning Model Deployment (Individual Assignment).
-**Student**: Maminirina Fabien Rakotoson (ID: 117328245)
+**Author**: Maminirina Fabien Rakotoson
 
 # Description of the project
 This project contains a trained sentiment classifier, returning if a given input is `positive OR neutral OR negative`. It's deployed as a FastAPI service, containerized with Docker, and deployed on AWS LightSail.
 
-# Live testing
-Please test the outcome of it by launching this command in CLI, and the text content can be changed as well.
+# Testing the API
+The public demo deployment has been taken down. Run it locally (see below), then call it with the API key you set in `API_KEY`:
 ```bash
-curl -X POST "https://aig-capstone.jgcz2b6j32c6t.ca-central-1.cs.amazonlightsail.com/predict" -H "Content-Type: application/json" -H "X-API-Key: FABIENRAKOTOSON" -d "{\"text\": \"I was laughing everywhere, that was so fun!\"}"
+curl -X POST "http://localhost:8080/predict" -H "Content-Type: application/json" -H "X-API-Key: <your-api-key>" -d "{\"text\": \"I was laughing everywhere, that was so fun!\"}"
 ```
 
 # Datasets
@@ -33,7 +33,7 @@ uvicorn app.main:app --reload --port 8080
 
 #### Docker commands
 docker build -t sentiment-api:latest .
-docker run --rm -p 8080:8080 -e API_KEY="FABIENRAKOTOSON" sentiment-api:latest
+docker run --rm -p 8080:8080 -e API_KEY="<your-api-key>" sentiment-api:latest
 
 #### Tag the local instance, then deploy it to Docker Hub
 docker tag sentiment-api:latest rakotosonfabien/sentiment-api:latest
@@ -47,5 +47,4 @@ docker push rakotosonfabien/sentiment-api:latest
 - Specified the API_KEY, port,health check path
 
 # Deployment information
-Link to deployed: https://aig-capstone.jgcz2b6j32c6t.ca-central-1.cs.amazonlightsail.com/
-The API is deployed on **Amazon LightSail**.
+The API was deployed on **Amazon LightSail** (container service) for the course; that demo is no longer online.
